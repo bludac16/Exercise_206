@@ -1,5 +1,10 @@
 package GUI;
 
+import Article.Article;
+import Dialog.StorageDlg;
+import TableModel.StorageTableModel;
+import TableRenderer.StorageTableRenderer;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -15,8 +20,13 @@ public class StorageGUI extends javax.swing.JFrame {
     /**
      * Creates new form StorageGUI
      */
+    private StorageTableModel stm = new StorageTableModel();
+    
+    
     public StorageGUI() {
         initComponents();
+        tableStorage.setModel(stm);
+        tableStorage.setDefaultRenderer(Object.class, new StorageTableRenderer());
     }
 
     /**
@@ -61,6 +71,11 @@ public class StorageGUI extends javax.swing.JFrame {
         menuManagement.setText("Management");
 
         miAddArticle.setText("Add New Article");
+        miAddArticle.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                miAddArticleActionPerformed(evt);
+            }
+        });
         menuManagement.add(miAddArticle);
 
         miRemoveArticle.setText("Remove Selected Article");
@@ -85,6 +100,17 @@ public class StorageGUI extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void miAddArticleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miAddArticleActionPerformed
+        StorageDlg dlg = new StorageDlg(this, true);
+        dlg.setVisible(true);
+        
+        if( dlg.isOk() ){
+            Article a = dlg.getA();
+            stm.addArticle(a);
+        }
+        dlg.setVisible(false);
+    }//GEN-LAST:event_miAddArticleActionPerformed
 
     /**
      * @param args the command line arguments
