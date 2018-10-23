@@ -2,6 +2,7 @@ package TableModel;
 
 
 import Article.Article;
+import java.util.Collections;
 import java.util.LinkedList;
 import javax.swing.table.AbstractTableModel;
 
@@ -20,19 +21,38 @@ public class StorageTableModel extends AbstractTableModel{
     private LinkedList<Article> articles = new LinkedList<>();
     private String[] colNames = {"ID", "Description", "Amount", "Place"};
     
+    public void addArticle(Article a)
+    {
+        articles.add(a);
+        Collections.sort(articles);
+        fireTableDataChanged();
+    }
+    
+    public void deleteArticle(int i)
+    {
+        articles.remove(i);
+        fireTableDataChanged();
+    }
+    
     @Override
     public int getRowCount() {
         return articles.size();
     }
-
+    
     @Override
-    public int getColumnCount() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public String getColumnName(int i) {
+        return colNames[i];
     }
 
     @Override
-    public Object getValueAt(int i, int i1) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public int getColumnCount() {
+        return colNames.length;
+    }
+
+    @Override
+    public Object getValueAt(int row, int col) {
+        Article a = articles.get(row);
+        return a;
     }
     
 }
