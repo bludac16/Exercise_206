@@ -79,9 +79,19 @@ public class StorageGUI extends javax.swing.JFrame {
         menuManagement.add(miAddArticle);
 
         miRemoveArticle.setText("Remove Selected Article");
+        miRemoveArticle.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                miRemoveArticleActionPerformed(evt);
+            }
+        });
         menuManagement.add(miRemoveArticle);
 
         miEditArticle.setText("Edit Selected Article");
+        miEditArticle.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                miEditArticleActionPerformed(evt);
+            }
+        });
         menuManagement.add(miEditArticle);
 
         menuBar.add(menuManagement);
@@ -89,9 +99,19 @@ public class StorageGUI extends javax.swing.JFrame {
         menuBuySell.setText("Buy/Sell");
 
         miBuyArticle.setText("Buy Selected Article");
+        miBuyArticle.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                miBuyArticleActionPerformed(evt);
+            }
+        });
         menuBuySell.add(miBuyArticle);
 
         miSellArticle.setText("Sell Selected Article");
+        miSellArticle.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                miSellArticleActionPerformed(evt);
+            }
+        });
         menuBuySell.add(miSellArticle);
 
         menuBar.add(menuBuySell);
@@ -109,8 +129,24 @@ public class StorageGUI extends javax.swing.JFrame {
             Article a = dlg.getA();
             stm.addArticle(a);
         }
-        dlg.setVisible(false);
     }//GEN-LAST:event_miAddArticleActionPerformed
+
+    private void miRemoveArticleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miRemoveArticleActionPerformed
+        stm.deleteArticle(tableStorage.getSelectedRow());
+    }//GEN-LAST:event_miRemoveArticleActionPerformed
+
+    private void miEditArticleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miEditArticleActionPerformed
+        
+    }//GEN-LAST:event_miEditArticleActionPerformed
+
+    private void miBuyArticleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miBuyArticleActionPerformed
+        
+        
+    }//GEN-LAST:event_miBuyArticleActionPerformed
+
+    private void miSellArticleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miSellArticleActionPerformed
+        
+    }//GEN-LAST:event_miSellArticleActionPerformed
 
     /**
      * @param args the command line arguments

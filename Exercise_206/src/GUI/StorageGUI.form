@@ -24,11 +24,17 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Remove Selected Article"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="miRemoveArticleActionPerformed"/>
+              </Events>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="miEditArticle">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Edit Selected Article"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="miEditArticleActionPerformed"/>
+              </Events>
             </MenuItem>
           </SubComponents>
         </Menu>
@@ -41,11 +47,17 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Buy Selected Article"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="miBuyArticleActionPerformed"/>
+              </Events>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="miSellArticle">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Sell Selected Article"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="miSellArticleActionPerformed"/>
+              </Events>
             </MenuItem>
           </SubComponents>
         </Menu>

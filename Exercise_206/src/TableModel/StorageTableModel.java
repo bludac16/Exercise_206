@@ -34,6 +34,11 @@ public class StorageTableModel extends AbstractTableModel{
         fireTableDataChanged();
     }
     
+    public void editArticle()
+    {
+        
+    }
+    
     @Override
     public int getRowCount() {
         return articles.size();

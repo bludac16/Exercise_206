@@ -1,6 +1,7 @@
 package Dialog;
 
 import Article.Article;
+import javax.swing.JTextField;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -153,6 +154,30 @@ public class StorageDlg extends javax.swing.JDialog {
 
     public void setA(Article a) {
         this.a = a;
+    }
+
+    public JTextField getTfDescription() {
+        return tfDescription;
+    }
+
+    public void setTfDescription(JTextField tfDescription) {
+        this.tfDescription = tfDescription;
+    }
+
+    public JTextField getTfID() {
+        return tfID;
+    }
+
+    public void setTfID(JTextField tfID) {
+        this.tfID = tfID;
+    }
+
+    public JTextField getTfPlace() {
+        return tfPlace;
+    }
+
+    public void setTfPlace(JTextField tfPlace) {
+        this.tfPlace = tfPlace;
     }
 
     /**
