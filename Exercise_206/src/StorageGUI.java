@@ -26,18 +26,60 @@ public class StorageGUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tableStorage = new javax.swing.JTable();
+        menuBar = new javax.swing.JMenuBar();
+        menuManagement = new javax.swing.JMenu();
+        miAddArticle = new javax.swing.JMenuItem();
+        miRemoveArticle = new javax.swing.JMenuItem();
+        miEditArticle = new javax.swing.JMenuItem();
+        menuBuySell = new javax.swing.JMenu();
+        miBuyArticle = new javax.swing.JMenuItem();
+        miSellArticle = new javax.swing.JMenuItem();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
+        tableStorage.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(tableStorage);
+
+        getContentPane().add(jScrollPane1, java.awt.BorderLayout.CENTER);
+
+        menuBar.setFocusTraversalPolicyProvider(true);
+
+        menuManagement.setText("Management");
+
+        miAddArticle.setText("Add New Article");
+        menuManagement.add(miAddArticle);
+
+        miRemoveArticle.setText("Remove Selected Article");
+        menuManagement.add(miRemoveArticle);
+
+        miEditArticle.setText("Edit Selected Article");
+        menuManagement.add(miEditArticle);
+
+        menuBar.add(menuManagement);
+
+        menuBuySell.setText("Buy/Sell");
+
+        miBuyArticle.setText("Buy Selected Article");
+        menuBuySell.add(miBuyArticle);
+
+        miSellArticle.setText("Sell Selected Article");
+        menuBuySell.add(miSellArticle);
+
+        menuBar.add(menuBuySell);
+
+        setJMenuBar(menuBar);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -78,5 +120,15 @@ public class StorageGUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JMenuBar menuBar;
+    private javax.swing.JMenu menuBuySell;
+    private javax.swing.JMenu menuManagement;
+    private javax.swing.JMenuItem miAddArticle;
+    private javax.swing.JMenuItem miBuyArticle;
+    private javax.swing.JMenuItem miEditArticle;
+    private javax.swing.JMenuItem miRemoveArticle;
+    private javax.swing.JMenuItem miSellArticle;
+    private javax.swing.JTable tableStorage;
     // End of variables declaration//GEN-END:variables
 }
